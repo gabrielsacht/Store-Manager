@@ -36,6 +36,7 @@
     "joi": "17.6.0",
     "mysql2": "2.3.0",
     "shelljs": "0.8.5",
+    "sinon-chai": "^3.7.0",
     "snakeize": "^0.1.0"
   },
   "devDependencies": {

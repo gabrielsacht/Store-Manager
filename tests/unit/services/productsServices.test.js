@@ -5,7 +5,6 @@ const { productModel } = require('../../../src/models')
 const { productService } = require('../../../src/services');
 
 describe('Testes de unidade do service dos produtos', function () {
-  afterEach(sinon.restore);
 
   describe('testando a função findById', function () {
 
@@ -71,4 +70,23 @@ describe('Testes de unidade do service dos produtos', function () {
     })
   })
 
+  describe('testando a função insertProduct', function () {
+
+    it('testando a inserção de um produto', async function () {
+      
+      sinon.stub(productModel, 'insert').resolves(4);
+      sinon.stub(productModel, 'findById').resolves({ id: 4, name: 'Capa da invisibilidade'});
+      const result = await productService.insertProduct('Capa da invisibilidade');
+      expect(result).to.deep.equal({ message: { id: 4, name: 'Capa da invisibilidade' }, type: null })
+    })
+
+    it('testando um nome inválido', async function () {
+      const result = await productService.insertProduct('inv')
+      expect(result).to.deep.equal({
+        type: 'INVALID_NAME', message: '"name" length must be at least 5 characters long',
+      })
+    })
+
+  })
+  afterEach(sinon.restore);
 });

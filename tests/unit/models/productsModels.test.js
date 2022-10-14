@@ -35,4 +35,10 @@ describe('Testes de unidade do model dos produtos', function () {
     const result = await productModel.findAll();
     expect(result).to.deep.equal(response);
   });
+
+  it('cadastrando um produto', async function () {
+    sinon.stub(connection, 'execute').resolves([{ insertId: 4 }]);
+    const result = await productModel.insert('Capa da invisibilidade')
+    expect(result).to.equal(4);
+  });
 });

@@ -100,4 +100,35 @@ describe('teste de unidade da camada products controller', function () {
     })
   })
 
+  describe('testando a resposta da criação de um produto', function () {
+
+    it('testando uma criação bem sucedida', async function () {
+      const res = {};
+      const req = { body: { name: 'Capa da invisibilidade' } };
+      const created = { message: { id: 4, name: 'Capa da invisibilidade' }, type: null }
+      res.status = sinon.stub().returns(res);
+      res.json = sinon.stub().returns();
+      sinon.stub(productService, 'insertProduct').resolves(created)
+      await productController.createProduct(req, res)
+
+      expect(res.status).to.have.been.calledWith(201);
+      expect(res.json).to.have.been.calledWith(created.message);
+    })
+
+    it('testando uma criação mal sucedida', async function () {
+      const res = {};
+      const req = { body: { name: 'Capa' } };
+      const notCreated = {
+        type: 'INVALID_NAME', message: '"name" length must be at least 5 characters long',
+      }
+      res.status = sinon.stub().returns(res);
+      res.json = sinon.stub().returns();
+      // sinon.stub(productService, 'insertProduct').resolves(notCreated)
+      await productController.createProduct(req, res)
+
+      expect(res.status).to.have.been.calledWith(422);
+      expect(res.json).to.have.been.calledWith({message: notCreated.message});
+    })
+  })
+
 })

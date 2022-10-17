@@ -10,6 +10,19 @@ const createSale = async (req, res) => {
   res.status(201).json(message);
 };
 
+const findAllSales = async (_req, res) => {
+  const { message } = await saleService.findAllSales();
+  res.status(200).json(message);
+};
+
+const findSale = async (req, res) => {
+  const { id } = req.params;
+  const { message } = await saleService.findAllSalesbyid(id);
+  res.status(200).json(message);
+};
+
 module.exports = {
   createSale,
+  findAllSales,
+  findSale,
 };

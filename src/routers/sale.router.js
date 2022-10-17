@@ -1,6 +1,7 @@
 const express = require('express');
 const { saleController } = require('../controllers');
-const { validateProducts, validateProductExist, validateQuantity } = require('../middlewares');
+const { validateProducts, validateProductExist, validateQuantity,
+  validateSaleExist } = require('../middlewares');
 
 const router = express.Router();
 
@@ -9,5 +10,8 @@ router.post('/',
   validateProductExist,
   validateQuantity,
   saleController.createSale);
+
+router.get('/:id', validateSaleExist, saleController.findSale);
+router.get('/', saleController.findAllSales);
 
 module.exports = router;

@@ -8,6 +8,13 @@ const findById = async (id) => {
   return camelize(product);
 };
 
+const findBySearch = async (query) => {
+  const [products] = await connection.execute(
+    `SELECT * FROM StoreManager.products WHERE name LIKE '%${query}%';`,
+  );
+  return camelize(products);
+};
+
 const findAll = async () => {
   const [result] = await connection.execute(
     'SELECT * FROM StoreManager.products ORDER BY id;',
@@ -37,4 +44,5 @@ module.exports = {
   insert,
   update,
   erase,
+  findBySearch,
 };

@@ -11,6 +11,11 @@ const findProduct = async (productId) => {
   return { type: 'PRODUCT_NOT_FOUND', message: 'Product not found' };
 };
 
+const findProductByQuery = async (query) => {
+  const products = await productModel.findBySearch(query);
+  return { type: null, message: products };
+};
+
 const findAllProducts = async () => {
   const products = await productModel.findAll();
   if (products) return { type: null, message: products };
@@ -55,4 +60,5 @@ module.exports = {
   insertProduct,
   updateProduct,
   deleteProduct,
+  findProductByQuery,
 };

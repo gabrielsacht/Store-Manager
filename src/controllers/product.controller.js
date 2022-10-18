@@ -18,6 +18,15 @@ const getProduct = async (req, res) => {
   res.status(200).json(message);
 };
 
+const getProductsBySearch = async (req, res) => {
+  const { q } = req.query;
+  const { type, message } = await productService.findProductByQuery(q);
+
+  if (type) return res.status(errorMap.mapError(type)).json({ message });
+
+  res.status(200).json(message);
+};
+
 const createProduct = async (req, res) => {
   const { name } = req.body;
   const { type, message } = await productService.insertProduct(name);
@@ -52,4 +61,5 @@ module.exports = {
   createProduct,
   updateProduct,
   deleteProduct,
+  getProductsBySearch,
 };

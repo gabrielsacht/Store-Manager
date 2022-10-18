@@ -53,7 +53,11 @@ const findAllSalesbyid = async (id) => {
     ORDER BY product_id;`,
   );
   return camelize(result);
-}; 
+};
+
+const erase = async (id) => connection.execute(
+  `DELETE FROM StoreManager.sales WHERE id = ${id};`,
+);
 
 module.exports = {
   findAllSales,
@@ -61,4 +65,5 @@ module.exports = {
   insert,
   findSaleById,
   findAllSalesbyid,
+  erase,
 };

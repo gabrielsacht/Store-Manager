@@ -11,6 +11,16 @@ const createSale = async (sales) => {
   return { type: null, message: { id: saleId, itemsSold: result } };
 };
 
+const updateSale = async (saleId, sales) => {
+  console.log(sales);
+  const salesArray = sales.map((sale) => ({ saleId, ...sale }));
+  await Promise.all(await salesArray.map((sale) => saleModel.update(sale)));
+
+  const result = await saleModel.findSaleById(saleId);
+
+  return { type: null, message: { saleId, itemsUpdated: result } };
+};
+
 const findAllSales = async () => {
   const result = await saleModel.findAllSales();
   return { type: null, message: result };
@@ -35,4 +45,5 @@ module.exports = {
   findAllSales,
   findAllSalesbyid,
   deleteSale,
+  updateSale,
 };

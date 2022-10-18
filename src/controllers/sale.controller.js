@@ -10,6 +10,16 @@ const createSale = async (req, res) => {
   res.status(201).json(message);
 };
 
+const updateSale = async (req, res) => {
+  const sales = req.body;
+  const { id } = req.params;
+  const { type, message } = await saleService.updateSale(id, sales);
+
+  if (type) return res.status(errorMap.mapError(type)).json({ message });
+
+  res.status(200).json(message);
+};
+
 const findAllSales = async (_req, res) => {
   const { message } = await saleService.findAllSales();
   res.status(200).json(message);
@@ -35,4 +45,5 @@ module.exports = {
   findAllSales,
   findSale,
   deleteSale,
+  updateSale,
 };

@@ -12,7 +12,6 @@ const createSale = async (sales) => {
 };
 
 const updateSale = async (saleId, sales) => {
-  console.log(sales);
   const salesArray = sales.map((sale) => ({ saleId, ...sale }));
   await Promise.all(await salesArray.map((sale) => saleModel.update(sale)));
 

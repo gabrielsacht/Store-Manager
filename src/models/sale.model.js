@@ -5,7 +5,6 @@ const createSale = async () => {
   const [{ insertId }] = await connection.execute(
     'INSERT INTO StoreManager.sales VALUES();',
   );
-  console.log(insertId);
   return insertId;
 };
 

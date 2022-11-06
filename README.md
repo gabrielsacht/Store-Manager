@@ -21,7 +21,7 @@ No seu Terminal Linux, inicie realizando o clone deste repositório com o seguin
     git clone git@github.com:gabrielsacht/Store-Manager.git
 
 Navegue até a raíz do projeto.
-
+    
     cd Store-Manager/
     
 A Aplicação pode ser rodada localmente, ou atráves do Docker.
@@ -154,7 +154,9 @@ Troque 'PORT' pela porta em que você definiu nos passos anteriores, caso não t
 
 # Testes Unitários
 A aplicação conta com testes unitários para verirficar a integridade das funcionalidades utilizadas na API. Para rodar os testes, utilize o comando:
+  
     npm run test:mocha
+    
 
 
 Desenvolvido por [Gabriel Sacht](https://www.linkedin.com/in/gabrielsacht/), 2022.

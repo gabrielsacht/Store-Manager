@@ -97,9 +97,11 @@ Com a aplicação rodando você pode fazer requisições com os seguintes end-po
 <strong>POST</strong>:
 - http://localhost:PORT/products 
     o corpo da requisição deve estar no seguinte formato:
+  ```json
       {
         "name": "ProdutoX"
       }
+  ```
 - http://localhost:PORT/sales
     o corpo da requisição deve estar no seguinte formato:
 ```json

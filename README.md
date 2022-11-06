@@ -89,21 +89,24 @@ Com a aplicação rodando você pode fazer requisições com os seguintes end-po
 
 <strong>GET</strong>:
 - http://localhost:PORT/products
-- http://localhost:PORT/products:id
+- http://localhost:PORT/products/:id
 - http://localhost:PORT/sales
-- http://localhost:PORT/sales:id
-- http://localhost:PORT/products/search?q=<PARAMETRO-DE-BUSCA>
+- http://localhost:PORT/sales/:id
+- http://localhost:PORT/products/search?q='PARAMETRO-DE-BUSCA'
 
 <strong>POST</strong>:
 - http://localhost:PORT/products 
     o corpo da requisição deve estar no seguinte formato:
+  
   ```json
       {
         "name": "ProdutoX"
       }
   ```
+  
 - http://localhost:PORT/sales
     o corpo da requisição deve estar no seguinte formato:
+  
   ```json
   [
     {
@@ -116,3 +119,33 @@ Com a aplicação rodando você pode fazer requisições com os seguintes end-po
     }
   ]
   ```
+
+<strong>PUT</strong>:
+- http://localhost:PORT/products/:id 
+    o corpo da requisição deve estar no seguinte formato:
+  
+  ```json
+      {
+        "name": "ProdutoX"
+      }
+  ```
+  
+  - http://localhost:PORT/sales
+    o corpo da requisição deve estar no seguinte formato:
+  
+  ```json
+  [
+    {
+      "productId": 1,
+      "quantity": 1
+    },
+    {
+      "productId": 2,
+      "quantity": 5
+    }
+  ]
+  ```
+
+ <strong>DELETE</strong>:
+ - http://localhost:PORT/products/:id
+ - http://localhost:PORT/sales/:id

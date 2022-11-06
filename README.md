@@ -1,6 +1,6 @@
 # Store manager
   Store manager é um projeto Back-end, onde coloca em prática o CRUD e o modelo de arquitetura de software MSC. A API construída é um sistema de gerenciamento de vendas no formato dropshipping em que será possível criar, visualizar, deletar e atualizar produtos e vendas.
- - O Projeto Foi desenvolvido durante o Curso de desenvolvimento Web Full Stack na [Trybe](https://www.betrybe.com/)
+  O Projeto Foi desenvolvido durante o Curso de desenvolvimento Web Full Stack na [Trybe](https://www.betrybe.com/)
  
  Na elaboração da API RESTful utilizou-se a arquitetura **Model-Service-Controller(MSC)**, com as seguintes ferramentas:
 
@@ -47,12 +47,40 @@ Para rodar localmente, você deve ter o Node instalado na sua máquina (16.14+) 
   Inicie a aplicação rodando o seguinte comando:
     
     npm start
-   
-Agora podemos rodar os testes utilizando o comando abaixo.
+</details>
+<details>
+   <summary><strong>Rodando pelo Docker</strong></summary> 
+  </br>
+  
+  Na raíz do projeto, utilize o seguinte comando para subir os containers do <strong>node</strong> e do <strong>banco de dados</strong>:
+
+    docker-compose up -d
+    
+  Abra o terminal do container <strong>store_manager</strong> executando o comando:
+
+     docker exec -it store_manager bash
+
+  após entrar no terminal do container, execute o comando abaixo para instalar as dependências:
+
+    npm install
+
+    
+ Para configurar o banco de dados será necessário entrar no terminal do container <strong>store_manager_db</strong>. No terminal da sua máquina local, utilize o seguinte comando:
+  
+    docker exec -it store_manager_db bash
+    
+ Faça login no banco de dados utilizando as credencias descritas no arquivo <strong>docker-compose.yaml</strong> (use 'root' e 'password' como padrão): 
+ 
+    mysql -u root -p
+ 
+ Execute os scripts <strong>migration.sql</strong> e <strong>seed.sql</strong> para a criação do banco <strong>Store Manager</strong>. Você pode fazer isso utilizando o mysql-workbench ou diretamente no terminal do mysql copiando os códigos contidos no arquivo migration.sql e seed.sql respectivamente.
+
+Agora podemos rodar os testes utilizando o comando abaixo no terminal do container <strong>store_manager</strong>.
   
     npm run test:mocha
     
 </details>
+   
 
 # :construction: README em construção ! :construction:
 <!-- Olá, Tryber!

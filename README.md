@@ -28,6 +28,8 @@ A Aplicação pode ser rodada localmente, ou atráves do Docker.
 
 Para rodar localmente, você deve ter o Node instalado na sua máquina (16.14+) e o mysql-server.
 
+Lembre-se de alterar as variáveis de ambiente caso a aplicação esteja enfrentando erros. Localmente você pode alterar as portas e suas credenciais no arquivo .env e se estiver rodando pelo docker, você pode alterar essas mesmas informações no arquivo docker-compose.yml, ambos localizados na raiz do projeto. 
+
 <details>
    <summary><strong>Rodando localmente</strong></summary> 
   </br>
@@ -75,20 +77,38 @@ Para rodar localmente, você deve ter o Node instalado na sua máquina (16.14+) 
  
  Execute os scripts <strong>migration.sql</strong> e <strong>seed.sql</strong> para a criação do banco <strong>Store Manager</strong>. Você pode fazer isso utilizando o mysql-workbench ou diretamente no terminal do mysql copiando os códigos contidos no arquivo migration.sql e seed.sql respectivamente.
 
-Agora podemos rodar os testes utilizando o comando abaixo no terminal do container <strong>store_manager</strong>.
+Utilizando o terminal do container do <strong>store_manager</strong> realize o seguinte comando para iniciar a aplicação:
   
-    npm run test:mocha
+    npm start
     
 </details>
    
+# End-points para usar
 
-# :construction: README em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto.
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+Com a aplicação rodando você pode fazer requisições com os seguintes end-points (dica: utilize o thunder-client ou semelhante) :
+
+<strong>GET</strong>:
+- http://localhost:PORT/products
+- http://localhost:PORT/products:id
+- http://localhost:PORT/sales
+- http://localhost:PORT/sales:id
+- http://localhost:PORT/products/search?q=<PARAMETRO-DE-BUSCA>
+
+<strong>POST</strong>:
+- http://localhost:PORT/products 
+    o corpo da requisição deve estar no seguinte formato:
+      {
+        "name": "ProdutoX"
+      }
+- http://localhost:PORT/sales
+    o corpo da requisição deve estar no seguinte formato:
+      [
+        {
+          "productId": 1,
+          "quantity": 1
+        },
+        {
+          "productId": 2,
+          "quantity": 5
+        }
+      ]

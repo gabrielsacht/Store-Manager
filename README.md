@@ -88,11 +88,11 @@ Utilizando o terminal do container do <strong>store_manager</strong> realize o s
 Com a aplicação rodando você pode fazer requisições com os seguintes end-points (dica: utilize o thunder-client ou semelhante) :
 
 <strong>GET</strong>:
-- http://localhost:PORT/products
-- http://localhost:PORT/products/:id
-- http://localhost:PORT/sales
-- http://localhost:PORT/sales/:id
-- http://localhost:PORT/products/search?q='PARAMETRO-DE-BUSCA'
+- http://localhost:PORT/products  -  lista todos os produtos
+- http://localhost:PORT/products/:id  -  lista um produto pelo id
+- http://localhost:PORT/sales  -  lista todas as vendas
+- http://localhost:PORT/sales/:id  -  lista uma venda pelo id
+- http://localhost:PORT/products/search?q='PARAMETRO-DE-BUSCA'  -  lista um produto buscando pelo parametro de busca
 
 <strong>POST</strong>:
 - http://localhost:PORT/products 
@@ -130,7 +130,7 @@ Com a aplicação rodando você pode fazer requisições com os seguintes end-po
       }
   ```
   
-  - http://localhost:PORT/sales <br>
+- http://localhost:PORT/sales
       o corpo da requisição deve estar no seguinte formato:
   
   ```json

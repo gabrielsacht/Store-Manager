@@ -1,6 +1,6 @@
 # Store manager
-  Store manager é um projeto Back-end, onde coloca em prática o CRUD e o modelo de arquitetura de software MSC. A API construída é um sistema de gerenciamento de vendas no formato dropshipping em que será possível criar, visualizar, deletar e atualizar produtos e vendas.
-  O Projeto Foi desenvolvido durante o Curso de desenvolvimento Web Full Stack na [Trybe](https://www.betrybe.com/)
+  Store manager é um projeto Back-end, onde coloca em prática o CRUD e o modelo de arquitetura de software MSC. A API construída é um sistema de gerenciamento de vendas no formato em que será possível criar, visualizar, deletar e atualizar produtos e vendas.
+  O Projeto Foi desenvolvido durante o Curso de desenvolvimento Web Full Stack na [Trybe](https://www.betrybe.com/).
  
  Na elaboração da API RESTful utilizou-se a arquitetura **Model-Service-Controller(MSC)**, com as seguintes ferramentas:
 
@@ -86,6 +86,7 @@ Utilizando o terminal do container do <strong>store_manager</strong> realize o s
 # End-points para usar
 
 Com a aplicação rodando você pode fazer requisições com os seguintes end-points (dica: utilize o thunder-client ou semelhante) :
+Troque 'PORT' pela porta em que você definiu nos passos anteriores, caso não tenha trocado, a aplicação roda na padrão 3000.
 
 <strong>GET</strong>:
 - http://localhost:PORT/products  -  lista todos os produtos
@@ -149,3 +150,11 @@ Com a aplicação rodando você pode fazer requisições com os seguintes end-po
  <strong>DELETE</strong>:
  - http://localhost:PORT/products/:id     -  deleta um produto
  - http://localhost:PORT/sales/:id      - deleta uma venda
+
+
+# Testes Unitários
+A aplicação conta com testes unitários para verirficar a integridade das funcionalidades utilizadas na API. Para rodar os testes, utilize o comando:
+    npm run test:mocha
+
+
+Desenvolvido por [Gabriel Sacht](https://www.linkedin.com/in/gabrielsacht/), 2022.

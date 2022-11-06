@@ -102,15 +102,15 @@ Com a aplicação rodando você pode fazer requisições com os seguintes end-po
       }
 - http://localhost:PORT/sales
     o corpo da requisição deve estar no seguinte formato:
-      ```json
-            [
-              {
-                "productId": 1,
-                "quantity": 1
-              },
-              {
-                "productId": 2,
-                "quantity": 5
-              }
-            ]
-      ```
+```json
+[
+  {
+    "productId": 1,
+    "quantity": 1
+  },
+  {
+    "productId": 2,
+    "quantity": 5
+  }
+]
+```

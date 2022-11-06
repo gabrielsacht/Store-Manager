@@ -130,8 +130,8 @@ Com a aplicação rodando você pode fazer requisições com os seguintes end-po
       }
   ```
   
-  - http://localhost:PORT/sales
-    o corpo da requisição deve estar no seguinte formato:
+  - http://localhost:PORT/sales <br>
+      o corpo da requisição deve estar no seguinte formato:
   
   ```json
   [

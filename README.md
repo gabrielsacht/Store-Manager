@@ -40,7 +40,7 @@ Lembre-se de alterar as variáveis de ambiente caso a aplicação esteja enfrent
 
   Renomeie o arquivo '.env-example' na raiz do projeto para '.env' e subtitua, caso necessário, as informações contidas nele com suas credenciais do mysql e as preferências (PORT e LOCALHOST).
   
-  Faça login no banco de dados utilizando suas credencias. 
+  No terminal faça login no banco de dados utilizando suas credencias: 
  
     mysql -u <seu-usuario> -p
     

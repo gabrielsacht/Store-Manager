@@ -95,7 +95,7 @@ Com a aplicação rodando você pode fazer requisições com os seguintes end-po
 - http://localhost:PORT/products/search?q='PARAMETRO-DE-BUSCA'  -  lista um produto buscando pelo parametro de busca
 
 <strong>POST</strong>:
-- http://localhost:PORT/products 
+- http://localhost:PORT/products    - cadastra um produto  <br>
     o corpo da requisição deve estar no seguinte formato:
   
   ```json
@@ -104,7 +104,7 @@ Com a aplicação rodando você pode fazer requisições com os seguintes end-po
       }
   ```
   
-- http://localhost:PORT/sales
+- http://localhost:PORT/sales     - cadastra uma venda <br>
     o corpo da requisição deve estar no seguinte formato:
   
   ```json
@@ -121,7 +121,7 @@ Com a aplicação rodando você pode fazer requisições com os seguintes end-po
   ```
 
 <strong>PUT</strong>:
-- http://localhost:PORT/products/:id 
+- http://localhost:PORT/products/:id    - atualiza um produto  <br>
     o corpo da requisição deve estar no seguinte formato:
   
   ```json
@@ -130,8 +130,8 @@ Com a aplicação rodando você pode fazer requisições com os seguintes end-po
       }
   ```
   
-- http://localhost:PORT/sales
-      o corpo da requisição deve estar no seguinte formato:
+- http://localhost:PORT/sales/:id     -  atualiza uma venda <br>
+    o corpo da requisição deve estar no seguinte formato:
   
   ```json
   [
@@ -147,5 +147,5 @@ Com a aplicação rodando você pode fazer requisições com os seguintes end-po
   ```
 
  <strong>DELETE</strong>:
- - http://localhost:PORT/products/:id
- - http://localhost:PORT/sales/:id
+ - http://localhost:PORT/products/:id     -  deleta um produto
+ - http://localhost:PORT/sales/:id      - deleta uma venda

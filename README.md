@@ -1,3 +1,59 @@
+# Store manager
+  Store manager é um projeto Back-end, onde coloca em prática o CRUD e o modelo de arquitetura de software MSC. A API construída é um sistema de gerenciamento de vendas no formato dropshipping em que será possível criar, visualizar, deletar e atualizar produtos e vendas.
+ - O Projeto Foi desenvolvido durante o Curso de desenvolvimento Web Full Stack na [Trybe](https://www.betrybe.com/)
+ 
+ Na elaboração da API RESTful utilizou-se a arquitetura **Model-Service-Controller(MSC)**, com as seguintes ferramentas:
+
+- [Node.JS](https://nodejs.org/en/)
+- [Express](https://expressjs.com/pt-br/)
+- [MySQL](https://www.mysql.com/)
+- [Docker](https://www.docker.com/)
+
+Para a elaboração dos testes unitários da aplicação, foi utilizado as seguintes ferramentas:
+- [Mocha](https://mochajs.org/)
+- [Chai](https://www.chaijs.com/)
+- [Sinon](https://sinonjs.org/)
+
+# Execução:
+
+No seu Terminal Linux, inicie realizando o clone deste repositório com o seguinte comando:
+
+    git clone git@github.com:gabrielsacht/Store-Manager.git
+
+Navegue até a raíz do projeto.
+
+    cd Store-Manager/
+    
+A Aplicação pode ser rodada localmente, ou atráves do Docker.
+
+Para rodar localmente, você deve ter o Node instalado na sua máquina (16.14+) e o mysql-server.
+
+<details>
+   <summary><strong>Rodando localmente</strong></summary> 
+  </br>
+  
+  Após seguir os dois passos iniciais execute o comando abaixo para instalar as dependências:
+
+    npm install
+
+  Renomeie o arquivo '.env-example' na raiz do projeto para '.env' e subtitua, caso necessário, as informações contidas nele com suas credenciais do mysql e as preferências (PORT e LOCALHOST).
+  
+  Faça login no banco de dados utilizando suas credencias. 
+ 
+    mysql -u <seu-usuario> -p
+    
+  Execute os scripts <strong>migration.sql</strong> e <strong>seed.sql</strong> para a criação do banco <strong>Store Manager</strong>. Você pode fazer isso utilizando o mysql-workbench ou diretamente no terminal do mysql copiando os códigos contidos no arquivo migration.sql e seed.sql respectivamente.
+  
+  Inicie a aplicação rodando o seguinte comando:
+    
+    npm start
+   
+Agora podemos rodar os testes utilizando o comando abaixo.
+  
+    npm run test:mocha
+    
+</details>
+
 # :construction: README em construção ! :construction:
 <!-- Olá, Tryber!
 Esse é apenas um arquivo inicial para o README do seu projeto.
